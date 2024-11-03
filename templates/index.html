@@ -4,23 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Главная | WOZBORN</title>
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body>
     <div class="card">
-        <h1>Добро пожаловать на сайт Максима</h1>
+        <h1>Добро пожаловать на сайт, {{ name }}</h1>
         <ul>
             <li><a href="/stories">Истории</a></li>
             <li><a href="http://gb.ru" target="_blank">gb.ru</a></li>
         </ul>
         <hr>
         <p>
-            <b>Максим</b> – это преподаватель в GeekSchool, эксперт-спикер в Rubius,<br>
-            эксперт в Zerocoder, стример, Data Engineer, Unity-разраб в отставке,<br>
-            фрилансер и т.д.
+            <b>{{ name }}</b> – это {{ user_description }}
         </p>
-        <img src="/static/img/maksim.jpeg" width="250px" alt="Фото Максима">
+        <img src="{{ url_for('static', filename='img/maksim.jpeg') }}" width="250px" alt="Фото Максима">
     </div>
 </body>
 </html>
